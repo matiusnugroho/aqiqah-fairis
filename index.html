@@ -50,8 +50,10 @@
 
 	</head>
 	<body>
-		<embed src="bgm.mp3" autostart="true" loop="true" width="2" height="0">
-		</embed>
+		<audio id="song" loop>
+			<source src="bgm.mp3"
+			type="audio/mp3">
+		</audio>  
 		
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
@@ -127,6 +129,19 @@
 	
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
+	<script>
+		function playSong(){
+			let song = document.querySelector('#song')
+			song.play()
+			console.log('song should be played')
+		}
+		document.addEventListener("scroll", function(){
+			playSong()
+		});
+		document.addEventListener("click", function(){
+			playSong()
+		});
+	</script>
 	</body>
 </html>
 
